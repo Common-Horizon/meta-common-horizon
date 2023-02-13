@@ -26,9 +26,7 @@ EXTRA_IMAGECMD:ota-ext4:qemuarm64 = "-O ^64bit,^metadata_csum -L otaroot -i 4096
 
 IMAGE_CMD:ota:prepend() {
 	if [ "${OSTREE_BOOTLOADER}" = "u-boot" ]; then
-        if [ "${MACHINE}" = *"raspberrypi"* ]; then
-		    cp -a ${DEPLOY_DIR_IMAGE}/boot.scr-${MACHINE} ${OTA_SYSROOT}/boot.scr
-        fi
+        cp -a ${DEPLOY_DIR_IMAGE}/boot.scr-${MACHINE} ${OTA_SYSROOT}/boot.scr
 	fi
 }
 do_image_ota[depends] += "${@'u-boot-default-script:do_deploy' if d.getVar('OSTREE_BOOTLOADER') == 'u-boot' else ''}"
