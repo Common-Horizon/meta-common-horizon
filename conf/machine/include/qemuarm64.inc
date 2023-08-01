@@ -29,3 +29,5 @@ PREFERRED_PROVIDER_virtual/kernel:qemuarm64 = "linux-yocto"
 PREFERRED_PROVIDER_virtual/kernel:qemuarm64:preempt-rt = "linux-yocto-rt"
 
 PREFERRED_PROVIDER_u-boot-default-script:qemuarm64 = "u-boot-distro-boot"
+
+OSTREE_KERNEL_ARGS:sota:append:qemuarm64 = "console=ttyAMA0 root=LABEL=otaroot rootfstype=ext4 logo.nologo vt.global_cursor_default=0 plymouth.ignore-serial-consoles splash fbcon=map:10 "
