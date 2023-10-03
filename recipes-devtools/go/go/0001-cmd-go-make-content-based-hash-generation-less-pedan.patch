@@ -111,14 +111,14 @@ index 67d1193..62e1774 100644
 +
 +func filterCompilerFlags(flags []string, keepfirst bool) []string {
 +	var newflags []string
-+	var realkeepfirst bool = keepfirst
++   var realkeepfirst bool = keepfirst
 +	if !filterFlags {
 +		return flags
 +	}
 +	for _, flag := range flags {
 +		if strings.HasPrefix(flag, "-m") || realkeepfirst {
 +			newflags = append(newflags, flag)
-+			realkeepfirst = false
++           realkeepfirst = false
 +		}
 +	}
 +	return newflags
