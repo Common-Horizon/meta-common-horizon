@@ -37,7 +37,8 @@ def get_tdx_ostree_purpose(purpose):
 TDX_OSTREE_PURPOSE ?= "${@get_tdx_ostree_purpose(d.getVar('TDX_PURPOSE'))}"
 
 # Use new branch naming
-OSTREE_BRANCHNAME = "${TDX_MAJOR}/${MACHINE}/${DISTRO}/${IMAGE_BASENAME}/${TDX_OSTREE_PURPOSE}"
+OSTREE_BRANCHNAME = "${TDX_RELEASE}-${MACHINE}"
+GARAGE_TARGET_VERSION = "${TDX_RELEASE}"
 
 # Force ostree summary to be updated
 OSTREE_UPDATE_SUMMARY = "1"
@@ -477,7 +478,7 @@ get_torizon_prov_data2() {
     # but may have different permissions; make sure they are correct.
     chmod 0750 "${destdir}/import/repo" || true
     chmod 0750 "${destdir}/import/director" || true
-    
+
     if [ "${TORIZON_SOTA_PROV_MODE}" = "online" ]; then
         tmp="${destdir}/tmp/provision.json"
         dst="${destdir}/auto-provisioning.json"
