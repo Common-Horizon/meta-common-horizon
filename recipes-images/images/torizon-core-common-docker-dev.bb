@@ -1,3 +1,6 @@
+TDX_COMMON = "1"
+
+require torizon-os-version.inc
 require torizon-core-docker.bb
 require torizon-core-dev.inc
 

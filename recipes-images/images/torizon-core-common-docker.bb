@@ -1,3 +1,7 @@
+TDX_COMMON = "1"
+
+require torizon-os-version.inc
+
 SUMMARY = "TorizonCore"
 DESCRIPTION = "TorizonCore Linux with no containers pre-provisioned."
 
