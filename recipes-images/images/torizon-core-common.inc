@@ -77,6 +77,11 @@ CORE_IMAGE_BASE_INSTALL:append:sota = " \
     provision-device \
 "
 
+# Update fallback for GRUB (for now only on x86 machines)
+CORE_IMAGE_BASE_INSTALL:append:x86-64 = " \
+    grub-ota-fallback \
+"
+
 CORE_IMAGE_BASE_INSTALL:append:mx8-nxp-bsp = " \
     kernel-module-imx-gpu-viv \
 "
