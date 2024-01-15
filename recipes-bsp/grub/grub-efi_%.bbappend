@@ -1,3 +1,5 @@
+# Add regexp command to GRUB
+GRUB_BUILDIN += "regexp"
 RDEPENDS:${PN}:class-target:remove:sota = "virtual-grub-bootconf"
 
 GRUB_BUILDIN += "reboot"
