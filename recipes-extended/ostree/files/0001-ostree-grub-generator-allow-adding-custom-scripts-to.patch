@@ -1,0 +1,56 @@
+From 9db2364ceb4febc3f5d2d13ad798c372920a5e06 Mon Sep 17 00:00:00 2001
+From: Eduardo Ferreira <eduardo.barbosa@toradex.com>
+Date: Thu, 21 Dec 2023 10:04:54 -0300
+Subject: [PATCH] ostree-grub-generator: allow adding custom scripts to
+ grub.cfg
+
+This changes allow us to customize grub.cfg without manually editing it.
+
+Now, whatever files found under /etc/ostree.d are added (in alphabetical
+order) between the cfg header and its menuentries.
+
+Upstream-Status: Pending
+
+Signed-off-by: Eduardo Ferreira <eduardo.barbosa@toradex.com>
+---
+ src/boot/grub2/ostree-grub-generator | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+diff --git a/src/boot/grub2/ostree-grub-generator b/src/boot/grub2/ostree-grub-generator
+index d1436b65..f644fd8a 100644
+--- a/src/boot/grub2/ostree-grub-generator
++++ b/src/boot/grub2/ostree-grub-generator
+@@ -25,6 +25,7 @@ script=$(basename ${0})
+ # Atomically safe location where to generete grub.cfg when executing system upgrade.
+ new_grub2_cfg=${2}
+ entries_path=$(dirname $new_grub2_cfg)/entries
++custom_scripts="/etc/ostree.d"
+ 
+ read_config()
+ {
+@@ -105,10 +106,22 @@ timeout=10
+ EOF
+ }
+ 
++populate_custom_section()
++{
++if [ -d "$custom_scripts" ]; then
++    for script in $(ls -v $custom_scripts/*); do
++        echo -e "\n### BEGIN ${script} ###" >> ${new_grub2_cfg} 
++        cat ${script} >> ${new_grub2_cfg}
++        echo -e "\n### END ${script} ###\n" >> ${new_grub2_cfg}
++    done
++fi
++}
++
+ generate_grub2_cfg()
+ {
+     populate_warning
+     populate_header
++    populate_custom_section
+     populate_menu
+ }
+ 
+-- 
+2.34.1
+
