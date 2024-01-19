@@ -14,6 +14,7 @@ SRC_URI = " \
 
 RDEPENDS:${PN} += "bash coreutils jq util-linux mmc-utils sed u-boot-fw-utils"
 RDEPENDS:${PN}:remove:genericx86-64 = "u-boot-fw-utils"
+RDEPENDS:${PN}:remove:qemux86-64 = "u-boot-fw-utils"
 RDEPENDS:${PN}:remove:intel-corei7-64 = "u-boot-fw-utils"
 
 do_install:append () {
