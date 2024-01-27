@@ -1,15 +1,15 @@
-# Common TorizonCore
+# Common Torizon OS
 
 ![Common Torizon cover image](https://github.com/commontorizon/Documentation/blob/main/assets/img/commonTorizonCore800.png?raw=true)
 
-Common TorizonCore is an embedded Linux distribution for the Torizon platform. It
+Common Torizon OS is an embedded Linux distribution for the [Torizon Cloud](https://app.torizon.io/). It
 features, among other essential services, a container runtime and components
 for secure remote over-the-air (OTA) updates.
 
-This layer provides the necessary metadata to build the Common TorizonCore Linux
+This layer provides the necessary metadata to build the Common Torizon OS Linux
 distribution.
 
-> ⚠️ **DISCLAIMER:** this is a derivative work from TorizonCore open source project. Torizon™ is a registered trademark of Toradex Group AG. This derivative work have not been reviewed or approved by Toradex. Common Torizon community does not talk on behalf of Toradex.
+> ⚠️ **DISCLAIMER:** this is a derivative work from Torizon OS open source project. Torizon™ is a registered trademark of Toradex Group AG. This derivative work have not been reviewed or approved by Toradex. Common Torizon community does not talk on behalf of Toradex.
 >
 >⚠️ **This software is provided experimentally as-is.**
 
@@ -19,7 +19,7 @@ General documentation for the community can be found here: <https://github.com/c
 
 ## Feature Support
 
-Our goal is to have Common TorizonCore in feature parity with TorizonCore. The table below shows the current status of each key feature:
+Our goal is to have Common Torizon OS in feature parity with Torizon OS. The table below shows the current status of each key feature:
 
 | Feature                      | Toradex SoM | Rpi3 | Rpi4 | Nezha D1 | x86-64 | Beagle Bone Black |
 | ---------------------------- | ----------- | ---- | ---- | -------- | ------ | ----------------- |
@@ -29,7 +29,7 @@ Our goal is to have Common TorizonCore in feature parity with TorizonCore. The t
 | Device Monitoring            | ✅           | ✅    | ✅    | ✅        | ✅      | ✅                 |
 | LTS Hardware & BSP           | ✅           |      |      |          |        |                   |
 | Free Technical Support       | ✅           |      |      |          |        |                   |
-| Prebuilt TorizonCore Image   | ✅           | ✅    | ✅    | ✅        | ✅      | ✅                 |
+| Prebuilt Torizon OS Image   | ✅           | ✅    | ✅    | ✅        | ✅      | ✅                 |
 | QA Approved Releases         | ✅           |      |      |          |        |                   |
 | Provisioning with TEZI*      | ✅           |      |      |          |        |                   |
 | Image Customizing with TCB** | ✅           |      |      |          |        |                   |
