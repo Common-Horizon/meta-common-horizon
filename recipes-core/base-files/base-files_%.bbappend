@@ -2,6 +2,10 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/${BPN}:"
 
 hostname = ""
 
+SRC_URI += " \
+	file://x86/fstab \
+"
+
 # This deviates a bit from what OE-core is doing. Especially we want the full
 # distro version (with date) in /etc/issue. From what I understand the filtering
 # has been mainly done to avoid inconsistency, but since we anyway rebuild
@@ -12,4 +16,15 @@ do_install_basefilesissue () {
 	printf "${DISTRO_NAME} " >> ${D}${sysconfdir}/issue.net
 	printf "%s \\\n \\\l\n\n" "${DISTRO_VERSION}" >> ${D}${sysconfdir}/issue
 	printf "%s %%h\n\n" "${DISTRO_VERSION}" >> ${D}${sysconfdir}/issue.net
+}
+
+# This is needed because we are adding the env file on the x86
+do_install:append:x86-64() {
+	install -m 0644 ${WORKDIR}/x86/fstab ${D}${sysconfdir}/fstab
+}
+
+do_install:append:cfs-support () {
+	# Get rid of the /dev/root entry in fstab to avoid errors from
+	# systemd-remount-fs.
+	sed -i -e '\#^ */dev/root#d' ${D}${sysconfdir}/fstab
 }
