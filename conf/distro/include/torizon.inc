@@ -75,6 +75,7 @@ BBMASK += " \
     /meta-freescale/recipes-graphics/cairo \
     /openembedded-core/meta/recipes-devtools/cargo \
     /openembedded-core/meta/recipes-devtools/rust \
+    /openembedded-core/meta/recipes-connectivity/connman \
 "
 
 # machines where TorizonCore is experimental
