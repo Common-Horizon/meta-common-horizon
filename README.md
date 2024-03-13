@@ -21,19 +21,19 @@ General documentation for the community can be found here: <https://github.com/c
 
 Our goal is to have Common Torizon OS in feature parity with Torizon OS. The table below shows the current status of each key feature:
 
-| Feature                      | Toradex SoM | Rpi3 | Rpi4 | Nezha D1 | x86-64 | Beagle Bone Black |
-| ---------------------------- | ----------- | ---- | ---- | -------- | ------ | ----------------- |
-| OTA Update OS Image          | ✅           |      | ✅     |          |        |                  |
-| OTA Update Container App     | ✅           | ✅    | ✅    | ✅        | ✅      | ✅                 |
-| OTA Update Bootloader        | ✅           |      |      |          |        |                   |
-| Device Monitoring            | ✅           | ✅    | ✅    | ✅        | ✅      | ✅                 |
-| LTS Hardware & BSP           | ✅           |      |      |          |        |                   |
-| Free Technical Support       | ✅           |      |      |          |        |                   |
-| Prebuilt Torizon OS Image   | ✅           | ✅    | ✅    | ✅        | ✅      | ✅                 |
-| QA Approved Releases         | ✅           |      |      |          |        |                   |
-| Provisioning with TEZI*      | ✅           |      |      |          |        |                   |
-| Image Customizing with TCB** | ✅           |      |      |          |        |                   |
-| VS Code extension 2 support  | ✅           | ✅    | ✅    | ⚠️***    | ⚠️***  | ✅                 |
+| Feature                      | Toradex SoM | Rpi3 | Rpi4 | Nezha D1 | x86-64 | Beagle Bone Black | Rpi Zero W2 | BeaglePlay | Rpi Zero W | QEMU x86-64 | QEMU arm64 |
+| ---------------------------- | ----------- | ---- | ---- | -------- | ------ | ----------------- | ----------- | ---------- | ---------- | ----------- | ---------- |
+| OTA Update OS Image          | ✅          | ✅   | ✅   |          | ✅     |                   | ✅          |            | ✅         | ✅          |            |
+| OTA Update Container App     | ✅          | ✅   | ✅   | ✅       | ✅     | ✅                | ✅          | ✅         | ✅         | ✅          | ✅         |
+| OTA Update Bootloader        | ✅          |      |      |          |        |                   |             |            |            |             |            |
+| Device Monitoring            | ✅          | ✅   | ✅   | ✅       | ✅     | ✅                | ✅          | ✅         | ✅         | ✅          | ✅         |
+| LTS Hardware & BSP           | ✅          |      |      |          |        |                   |             |            |            |             |            |
+| Free Technical Support       | ✅          |      |      |          |        |                   |             |            |            |             |            |
+| Prebuilt Torizon OS Image    | ✅          | ✅   | ✅   | ✅       | ✅     | ✅                | ✅          | ✅         | ✅         | ✅          | ✅         |
+| QA Approved Releases         | ✅          |      |      |          |        |                   |             |            |            |             |            |
+| Provisioning with TEZI*      | ✅          |      |      |          |        |                   |             |            |            |             |            |
+| Image Customizing with TCB** | ✅          |      |      |          |        |                   |             |            |            |             |            |
+| VS Code extension 2 support  | ✅          | ✅   | ✅   | ⚠️***     | ⚠️***   | ✅                | ✅          | ✅         | ⚠️***       | ⚠️***        | ✅         |
 
 > ⚠️* **TEZI**: Toradex Easy Installer
 ⚠️** **TCB**: TorizonCore Builder
