@@ -9,8 +9,6 @@ SRC_URI += " \
     file://commontorizonlogo.png \
     file://commontorizonlogo-dev.png \
     file://0001-themes-only-install-spinner.patch \
-    file://torizonlogo-white.png \
-    file://torizonlogo-labs.png \
     file://spinner.plymouth \
 "
 
