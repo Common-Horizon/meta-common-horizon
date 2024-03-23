@@ -25,4 +25,9 @@ do_install:append () {
     fi
 
     install -m 0644 ${WORKDIR}/spinner.plymouth ${D}${datadir}/plymouth/themes/spinner/spinner.plymouth
+
+    # remove the renderers/drm.so if we do not support drm
+    if [ "${MACHINE}" = "raspberrypi0-wifi" ]; then
+        rm -f ${D}${libdir}/plymouth/renderers/drm.so
+    fi
 }

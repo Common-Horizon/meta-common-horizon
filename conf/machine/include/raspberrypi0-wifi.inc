@@ -5,3 +5,5 @@ OSTREE_KERNEL:raspberrypi0-wifi = "zImage"
 KERNEL_IMAGETYPE:raspberrypi0-wifi = "zImage"
 KERNEL_IMAGETYPE:sota:raspberrypi0-wifi = "zImage"
 KERNEL_BOOTCMD:raspberrypi0-wifi = "bootz"
+
+OSTREE_KERNEL_ARGS:sota:append:rpi = " plymouth.ignore-udev "
