@@ -10,9 +10,11 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 KERNEL_CONFIG_URI ?= "git://git.yoctoproject.org/yocto-kernel-cache;type=kmeta;name=meta;branch=${KMETA_BRANCH};destsuffix=${KMETA}"
 
 SRC_URI = " \
-           git://source.denx.de/Xenomai/xenomai4/linux-evl.git;protocol=https;branch=${KBRANCH};name=machine; \
+           git://source.denx.de/Xenomai/linux-dovetail.git;protocol=https;branch=${KBRANCH};name=machine; \
+           git://source.denx.de/Xenomai/xenomai.git;protocol=https;branch=${XENBRANCH};name=xenomai;destsuffix=xenomai; \
            ${KERNEL_CONFIG_URI} \
-           file://xenomai.cfg \
+           file://xenomai-common.cfg \
+           file://xenomai3.cfg \
 	  "
 
 LINUX_VERSION_EXTENSION ??= "-intel-pk-${LINUX_KERNEL_TYPE}"

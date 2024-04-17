@@ -1,14 +1,14 @@
-require linux-xenomai.inc
+require linux-xenomai-4-evl.inc
 
-SUMMARY = "Linux kernel with Xenomai patches"
+SUMMARY = "Linux kernel with Xenomai 4 patches and the EVL core"
 
 # Skip processing of this recipe if it is not explicitly specified as the
 # PREFERRED_PROVIDER for virtual/kernel. This avoids errors when trying
 # to build multiple virtual/kernel providers, e.g. as dependency of
 # core-image-rt-sdk, core-image-rt.
 python () {
-    if d.getVar("KERNEL_PACKAGE_NAME", True) == "kernel" and d.getVar("PREFERRED_PROVIDER_virtual/kernel") != "linux-xenomai":
-        raise bb.parse.SkipPackage("Set PREFERRED_PROVIDER_virtual/kernel to linux-xenomai to enable it")
+    if d.getVar("KERNEL_PACKAGE_NAME", True) == "kernel" and d.getVar("PREFERRED_PROVIDER_virtual/kernel") != "linux-xenomai-4":
+        raise bb.parse.SkipPackage("Set PREFERRED_PROVIDER_virtual/kernel to linux-xenomai-4 to enable it")
 }
 
 KBRANCH = "v5.10.y-evl-rebase"
