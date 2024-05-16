@@ -56,8 +56,8 @@ do_install:append:mx8-nxp-bsp() {
     install -m 0755 ${WORKDIR}/50-imx8-graphics.conf ${D}/etc/modules-load.d/50-imx8-graphics.conf
 }
 
-SRC_URI:append:ti-soc = " file://50-am62-graphics.conf"
-RDEPENDS:initramfs-module-kmod:append:ti-soc = " \
+SRC_URI:append:verdin-am62 = " file://50-am62-graphics.conf"
+RDEPENDS:initramfs-module-kmod:append:verdin-am62 = " \
     kernel-module-pwm-tiehrpwm \
     kernel-module-fb-sys-fops \
     kernel-module-sysimgblt \
@@ -71,8 +71,7 @@ RDEPENDS:initramfs-module-kmod:append:ti-soc = " \
     kernel-module-ti-sn65dsi83 \
     kernel-module-lontium-lt8912b \
 "
-
-do_install:append:ti-soc() {
+do_install:append:verdin-am62() {
     install -d ${D}/etc/modules-load.d/
     install -m 0755 ${WORKDIR}/50-am62-graphics.conf ${D}/etc/modules-load.d/50-am62-graphics.conf
 }
