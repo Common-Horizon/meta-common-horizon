@@ -14,7 +14,7 @@ UBOOT_BINARY_OTA_IGNORE:qemux86-64 = "1"
 IMAGE_FSTYPES_REMOVE = "hddimg teziimg"
 IMAGE_FSTYPES:append = " wic"
 
-hostname:pn-base-files = "${MACHINE}"
+hostname:pn-base-files = "emulator"
 CORE_IMAGE_BASE_INSTALL:remove = "set-hostname"
 
 PREFERRED_PROVIDER_u-boot-default-script = ""

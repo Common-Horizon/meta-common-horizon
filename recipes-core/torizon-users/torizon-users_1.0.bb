@@ -18,8 +18,11 @@ GROUPADD_PARAM:${PN} = "torizon"
 USERADD_PARAM:${PN} = "-G adm,sudo,users,plugdev,audio,video,gpio,i2cdev,spidev,dialout,input,pwm -m -d /home/torizon -p GudJRR5U.mLp2 torizon"
 
 pkg_postinst_ontarget:${PN} () {
-    if [ ! -e /etc/.passwd_changed ]; then
-        passwd -e torizon
-        touch /etc/.passwd_changed
+    # not needed to expire the password on emulator
+    if [ "$(hostname)" != "emulator" ]; then
+        if [ ! -e /etc/.passwd_changed ]; then
+            passwd -e torizon
+            touch /etc/.passwd_changed
+        fi
     fi
 }
