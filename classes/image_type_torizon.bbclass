@@ -37,7 +37,7 @@ def get_tdx_ostree_purpose(purpose):
 TDX_OSTREE_PURPOSE ?= "${@get_tdx_ostree_purpose(d.getVar('TDX_PURPOSE'))}"
 
 # Use new branch naming
-OSTREE_BRANCHNAME = "${TDX_RELEASE}-${MACHINE}"
+OSTREE_BRANCHNAME = "${TDX_MAJOR}/${MACHINE}/${DISTRO}/${IMAGE_BASENAME}/${TDX_OSTREE_PURPOSE}"
 GARAGE_TARGET_VERSION ?= "${TDX_RELEASE}"
 
 # Force ostree summary to be updated
