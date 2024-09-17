@@ -31,7 +31,7 @@ PREFERRED_PROVIDER_virtual/kernel = "linux-intel"
 PREFERRED_VERSION_linux-intel = "5.10.%"
 
 PREFERRED_PROVIDER_virtual/kernel:xenomai3 = "linux-xenomai-3"
-PREFERRED_VERSION_linux-xenomai-3 = "5.10.%"
+PREFERRED_VERSION_linux-xenomai-3 ?= "5.10.%"
 
 PREFERRED_PROVIDER_virtual/kernel:xenomai4 = "linux-xenomai-4"
 PREFERRED_VERSION_linux-xenomai-4 = "5.10.%"
