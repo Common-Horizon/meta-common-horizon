@@ -1,6 +1,6 @@
 
 TDX_MAJOR = "6"
-TDX_MINOR = "7"
+TDX_MINOR = "8"
 TDX_PATCH = "0"
 
 TDX_RELEASE = "${TDX_MAJOR}.${TDX_MINOR}.${TDX_PATCH}-common"
