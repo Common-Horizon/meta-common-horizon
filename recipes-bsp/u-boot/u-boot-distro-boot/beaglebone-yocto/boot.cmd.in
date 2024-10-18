@@ -27,7 +27,7 @@ fi
 
 # save default U-Boot devicetree file to use in a rollback situation
 env set fdtfile2 "${fdtfile}"
-env set fdtfile "am335x-boneblack.dtb"
+run findfdt
 
 if test -n "${loadaddr}"
 then
