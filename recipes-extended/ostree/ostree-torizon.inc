@@ -28,7 +28,7 @@ def is_ti(d):
 
 def get_deps(d):
     # NOTE: beagleplay is TI but does not use the Toradex BSP
-    if is_ti(d) and ('beagleplay' not in d.getVar('MACHINE')) :  # TI
+    if is_ti(d) and ('beagleplay' not in d.getVar('MACHINE')) and ('beaglebone' not in d.getVar('MACHINE')) :  # TI
         return 'u-boot-toradex-ti' if d.getVar('PREFERRED_PROVIDER_u-boot') else ''
     else:  # NXP/x86 generic/QEMU
         return 'u-boot-default-script' if d.getVar('PREFERRED_PROVIDER_u-boot-default-script') else ''

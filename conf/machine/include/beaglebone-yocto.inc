@@ -1,3 +1,5 @@
+# Settings for the meta-yocto-bsp beaglebone-yocto machine.
+
 # taken from meta-freescale/conf/machine/include/utilities.inc
 def make_dtb_boot_files(d):
     # Generate IMAGE_BOOT_FILES entries for device tree files listed in
