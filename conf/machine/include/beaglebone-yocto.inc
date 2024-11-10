@@ -27,7 +27,7 @@ CORE_IMAGE_BASE_INSTALL:append = "resize-helper"
 # beaglebone
 KERNEL_DEVICETREE:append:beaglebone-yocto = " am335x-boneblack-wireless.dtb am335x-pocketbeagle.dtb "
 KERNEL_BUILTIN_WIREGUARD:beaglebone-yocto = "1"
-IMAGE_INSTALL:append:beaglebone-yocto = " linux-firmware-wl18xx "
+IMAGE_INSTALL:append:beaglebone-yocto = " linux-firmware-wl18xx ti-18xx-wlconf "
 CORE_IMAGE_BASE_INSTALL:remove = "kernel-module-wireguard wireguard-tools"
 PREFERRED_PROVIDER_virtual/bootloader = "u-boot"
 PREFERRED_PROVIDER_virtual/bootloader:sota = "u-boot"
