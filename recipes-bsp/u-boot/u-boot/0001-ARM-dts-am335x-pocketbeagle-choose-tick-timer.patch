@@ -1,0 +1,40 @@
+From ec6a81275eb34ec46bff08f81961da4f2384deef Mon Sep 17 00:00:00 2001
+From: Trevor Woerner <twoerner@gmail.com>
+Date: Wed, 30 Aug 2023 10:35:40 -0400
+Subject: [PATCH] ARM: dts: am335x-pocketbeagle: choose tick-timer
+
+Commit 4b2be78ab66c ("time: Fix get_ticks being non-monotonic")
+requires '/chosen/tick-timer' in device-tree. Otherwise we get:
+
+	U-Boot 2023.07.02 (Jul 11 2023 - 15:20:44 +0000)
+
+	CPU  : AM335X-GP rev 2.1
+	Model: TI AM335x PocketBeagle
+	DRAM:  512 MiB
+	Core:  154 devices, 16 uclasses, devicetree: separate
+	Could not initialize timer (err -19)
+
+	resetting ...
+
+Upstream-Status: Submitted
+Suggested-by: Pierre Lebleu <pierre.lebleu@pile-engineering.com>
+Signed-off-by: Trevor Woerner <twoerner@gmail.com>
+---
+ arch/arm/dts/am335x-pocketbeagle.dts | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/arch/arm/dts/am335x-pocketbeagle.dts b/arch/arm/dts/am335x-pocketbeagle.dts
+index b379e3a5570d..9a9ab940e20c 100644
+--- a/arch/arm/dts/am335x-pocketbeagle.dts
++++ b/arch/arm/dts/am335x-pocketbeagle.dts
+@@ -15,6 +15,7 @@
+ 
+ 	chosen {
+ 		stdout-path = &uart0;
++		tick-timer = &timer2;
+ 	};
+ 
+ 	leds {
+-- 
+2.41.0.327.gaa9166bcc0ba
+

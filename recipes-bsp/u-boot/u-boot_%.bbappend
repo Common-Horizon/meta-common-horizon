@@ -9,3 +9,7 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/u-boot:"
 SRC_URI:append:rpi = " file://0001-rpi-always-set-fdt_addr-with-firmware-provided-FDT-address.patch"
 
 DEPENDS:append:rpi = " u-boot-default-script"
+
+SRC_URI:append:beaglebone-yocto = " \
+    file://0001-ARM-dts-am335x-pocketbeagle-choose-tick-timer.patch \
+    "
